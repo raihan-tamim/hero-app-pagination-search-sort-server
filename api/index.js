@@ -84,9 +84,10 @@ app.get("/apps/:id", async (req, res) => {
 });
 
 // Basic routes
-// app.get("/", (req, res) => {
-//   res.json({ status: "ok", message: "Hero Apps Server" });
-// });
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "Hero Apps Server" });
+});
+
 //404
 app.all(/.*/, (req, res) => {
   res.status(404).json({
@@ -95,9 +96,5 @@ app.all(/.*/, (req, res) => {
   });
 });
 
-
-app.get("/", (req, res) => {
-  res.send("Server running");
-});
 
 module.exports = app;
